@@ -1,24 +1,20 @@
 #!/bin/bash
 
-echo -n "beacon: "
-read NAME
+clear
 
-TAG=$(sed '1!d' $(pwd)/$NAME.bcn)
-PXP=$(wc -w < <(curl -s <URL>/$NAME.bcn)
+echo -n "beacon: "
+read TAG
+
+clear
+
+PXP=$(wc -w < $(curl -s https://raw.githubusercontent.com/alectramell/beacons/master/$TAG.bcn))
 POP=$PXP
 
 while [ $POP -gt 5 ]
 do
-	if [ $NAME -eq "$TAG" ]
-	then
-		echo -n "$TAG = "
-		echo "$POP"
-		sleep 1.5
-		clear
-	else
-		echo "NO TAG"
-		sleep 1.5
-		clear
-	fi
+	echo -n "$TAG = "
+	echo "$POP"
+	sleep 1.5
+	clear
 done
 
