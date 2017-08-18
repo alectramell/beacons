@@ -6,8 +6,13 @@ TAG=$((1 + RANDOM % 3))
 
 clear
 
-while [ $TAG -eq 1 ]
+while [ $(cat $(pwd)/status.txt) = "ON" ]
 do
+
+TAG=$((1 + RANDOM % 3))
+
+if [ $TAG -eq 1 ]
+then
 	clear
 	rm $(pwd)/001.bcn
 	clear
@@ -22,10 +27,8 @@ do
 	echo "BEACONS = $POP"
 	sleep 3
 
-done
-
-while [ $TAG -eq 2 ]
-do
+elif [ $TAG -eq 2 ]
+then
 	clear
 	rm $(pwd)/002.bcn
 	clear
@@ -40,10 +43,8 @@ do
 	echo "BEACONS = $POP"
 	sleep 3
 
-done
-
-while [ $TAG -eq 3 ]
-do
+elif [ $TAG -eq 3 ]
+then
 	clear
 	rm $(pwd)/003.bcn
 	clear
@@ -57,6 +58,7 @@ do
 
 	echo "BEACONS = $POP"
 	sleep 3
+fi
 
 done
 
