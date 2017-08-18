@@ -20,6 +20,12 @@ RELOAD() {
 	rm /home/$(whoami)/Desktop/.yellow.bcns
 	rm /home/$(whoami)/Desktop/.green.bcns
 	clear
+	rm $(pwd)/red.bcn
+	rm $(pwd)/yellow.bcn
+	rm $(pwd)/green.bcn
+	clear
+	rm $(pwd)/status.txt
+	clear
 	bash $(pwd)/main.sh
 }
 
@@ -152,6 +158,12 @@ then
 	rm /home/$(whoami)/Desktop/.red.bcns
 	rm /home/$(whoami)/Desktop/.yellow.bcns
 	rm /home/$(whoami)/Desktop/.green.bcns
+	clear
+	rm $(pwd)/red.bcn
+	rm $(pwd)/yellow.bcn
+	rm $(pwd)/green.bcn
+	clear
+	rm $(pwd)/status.txt
 	exit
 else
 	clear
