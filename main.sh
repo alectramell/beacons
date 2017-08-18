@@ -64,7 +64,8 @@ then
 
 	echo -n "BEACONS (${red}red${reset}) = "
 	echo "$POP" | pv -qL 10
-	sleep 5
+	sleep 3
+	curl -s https://raw.githubusercontent.com/alectramell/beacons/master/red.bcn | pg
 
 elif [ $TAG -eq 2 ]
 then
@@ -81,7 +82,8 @@ then
 
 	echo -n "BEACONS (${yellow}yellow${reset}) = "
 	echo "$POP" | pv -qL 10
-	sleep 5
+	sleep 3
+	curl -s https://raw.githubusercontent.com/alectramell/beacons/master/yellow.bcn | pg
 
 elif [ $TAG -eq 3 ]
 then
@@ -98,7 +100,8 @@ then
 
 	echo -n "BEACONS (${green}green${reset}) = "
 	echo "$POP" | pv -qL 10
-	sleep 5
+	sleep 3
+	curl -s https://raw.githubusercontent.com/alectramell/beacons/master/green.bcn | pg
 fi
 
 done
