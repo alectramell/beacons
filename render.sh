@@ -2,26 +2,26 @@
 
 clear
 
-echo -n "STATUS (o=on, x=off): "
+echo -n "ACTIVE STATUS (t/f): "
 read -s -n1 STATUS
 
 clear
 
-if [ $STATUS = "o" ]
+if [ $STATUS = "t" ]
 then
 	echo "ON" > $(pwd)/status.txt
 	clear
-	echo "STATUS=ON" | pv -qL 10
+	echo "ACTIVE STATUS = TRUE" | pv -qL 10
 	sleep 1.0
 
-elif [ $STATUS = "x" ]
+elif [ $STATUS = "f" ]
 then
 	echo "OFF" > $(pwd)/status.txt
 	clear
-	echo "STATUS=OFF" | pv -qL 10
+	echo "ACTIVE STATUS = FALSE" | pv -qL 10
 	sleep 1.0
 else
-	echo "STATUS=VOID"
+	echo "ACTIVE STATUS = VOID"
 	sleep 1.0
 	clear
 	exit
@@ -41,3 +41,5 @@ git commit -m "beacons"
 clear
 
 git push origin master
+
+clear
