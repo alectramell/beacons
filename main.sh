@@ -5,14 +5,20 @@ clear
 RELOAD() {
 
 	clear
+	wget https://raw.githubusercontent.com/alectramell/beacons/master/status.txt -O $(pwd)/status.txt
+	clear
 	echo "OFF" > $(pwd)/status.txt
 	sleep 0.5
 	clear
 	echo "ON" > $(pwd)/status.txt
 	sleep 0.5
 	clear
-	echo "..ATTEMPTING TO GATHER BEACONS.." | pv -qL 10
+	echo "..ATTEMPTING TO RE-GATHER BEACONS.." | pv -qL 10
 	sleep 5
+	clear
+	rm /home/$(whoami)/Desktop/.red.bcns
+	rm /home/$(whoami)/Desktop/.yellow.bcns
+	rm /home/$(whoami)/Desktop/.green.bcns
 	clear
 	bash $(pwd)/main.sh
 }
@@ -38,7 +44,7 @@ reset=$(tput sgr0)
 
 clear
 
-while [ $(cat $(pwd)/status.txt) = "ON" ]
+while [ $(curl -s https://raw.githubusercontent.com/alectramell/beacons/master/status.txt) = "ON" ]
 do
 
 if [ $(date +%S) -lt 10 ]
@@ -60,6 +66,7 @@ then
 
 	PXP=$(wc -c < $(pwd)/red.bcn)
 	POP=$PXP
+	cat $(pwd)/red.bcn > /home/$(whoami)/Desktop/.red.bcns
 
 	clear
 
@@ -67,7 +74,8 @@ then
 	echo "$POP" | pv -qL 10
 	sleep 1.5
 	showBeacons=$(curl -s https://raw.githubusercontent.com/alectramell/beacons/master/red.bcn)
-	echo "${back}${blue}>>${red}$showBeacons${reset}"
+	echo "${back}${blue}LIST >>${reset}"
+	echo "${red}$showBeacons${reset}"
 	sleep 7
 
 elif [ $TAG -eq 2 ]
@@ -80,6 +88,7 @@ then
 
 	PXP=$(wc -c < $(pwd)/yellow.bcn)
 	POP=$PXP
+	cat $(pwd)/red.bcn > /home/$(whoami)/Desktop/.yellow.bcns
 
 	clear
 
@@ -87,7 +96,8 @@ then
 	echo "$POP" | pv -qL 10
 	sleep 1.5
 	showBeacons=$(curl -s https://raw.githubusercontent.com/alectramell/beacons/master/yellow.bcn)
-	echo "${back}${blue}>>${yellow}$showBeacons${reset}"
+	echo "${back}${blue}LIST >>${reset}"
+	echo "${yellow}$showBeacons${reset}"
 	sleep 7
 
 elif [ $TAG -eq 3 ]
@@ -100,6 +110,7 @@ then
 
 	PXP=$(wc -c < $(pwd)/green.bcn)
 	POP=$PXP
+	cat $(pwd)/red.bcn > /home/$(whoami)/Desktop/.green.bcns
 
 	clear
 
@@ -107,8 +118,43 @@ then
 	echo "$POP" | pv -qL 10
 	sleep 1.5
 	showBeacons=$(curl -s https://raw.githubusercontent.com/alectramell/beacons/master/green.bcn)
-	echo "${back}${blue}>>${green}$showBeacons${reset}"
+	echo "${back}${blue}LIST >>${reset}"
+	echo "${green}$showBeacons${reset}"
 	sleep 7
+fi
+
+if [ -e /home/$(whoami)/Desktop/.red.bcns ] && [ -e /home/$(whoami)/Desktop/.yellow.bcns ] && [ -e /home/$(whoami)/Desktop/.green.bcns ]
+then
+	RBCNS=$(cat /home/$(whoami)/Desktop/.red.bcns)
+	YBCNS=$(cat /home/$(whoami)/Desktop/.yellow.bcns)
+	GBCNS=$(cat /home/$(whoami)/Desktop/.green.bcns)
+
+	clear
+
+	echo "[red]" > /home/$(whoami)/Desktop/beacons.list
+	echo "$RBCNS" >> /home/$(whoami)/Desktop/beacons.list
+	echo -e "\n" >> /home/$(whoami)/Desktop/beacons.list
+	echo "[yellow]" >> /home/$(whoami)/Desktop/beacons.list
+	echo "$YBCNS" >> /home/$(whoami)/Desktop/beacons.list
+	echo -e "\n" >> /home/$(whoami)/Desktop/beacons.list
+	echo "[green]" >> /home/$(whoami)/Desktop/beacons.list
+	echo "$GBCNS" >> /home/$(whoami)/Desktop/beacons.list
+	echo -e "\n" >> /home/$(whoami)/Desktop/beacons.list
+	
+	clear
+else
+	clear
+fi
+
+if [ -e /home/$(whoami)/Desktop/beacons.list ]
+then
+	gnome-open /home/$(whoami)/Desktop/beacons.list &
+	rm /home/$(whoami)/Desktop/.red.bcns
+	rm /home/$(whoami)/Desktop/.yellow.bcns
+	rm /home/$(whoami)/Desktop/.green.bcns
+	exit
+else
+	clear
 fi
 
 done
