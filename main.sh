@@ -2,6 +2,32 @@
 
 clear
 
+RELOAD() {
+
+	clear
+	echo "OFF" > $(pwd)/status.txt
+	sleep 0.5
+	clear
+	echo "ON" > $(pwd)/status.txt
+	sleep 0.5
+	clear
+	echo "..ATTEMPTING TO GATHER BEACONS.." | pv -qL 10
+	sleep 5
+	clear
+	bash $(pwd)/main.sh
+}
+
+clear
+
+if [ $(date +%S) -lt 30 ]
+then
+	RELOAD
+else
+	clear
+fi
+
+clear
+
 TAG=$((1 + RANDOM % 3))
 
 red=$(tput setaf 1)
@@ -13,6 +39,13 @@ clear
 
 while [ $(cat $(pwd)/status.txt) = "ON" ]
 do
+
+if [ $(date +%S) -lt 30 ]
+then
+	RELOAD
+else
+	clear
+fi
 
 TAG=$((1 + RANDOM % 3))
 
