@@ -19,7 +19,7 @@ RELOAD() {
 
 clear
 
-if [ $(date +%S) -lt 30 ]
+if [ $(date +%S) -lt 10 ]
 then
 	RELOAD
 else
@@ -29,8 +29,9 @@ fi
 clear
 
 TAG=$((1 + RANDOM % 3))
-
+blue=$(tput setaf 4)
 red=$(tput setaf 1)
+back=$(tput smso)
 yellow=$(tput setaf 190)
 green=$(tput setaf 2)
 reset=$(tput sgr0)
@@ -40,7 +41,7 @@ clear
 while [ $(cat $(pwd)/status.txt) = "ON" ]
 do
 
-if [ $(date +%S) -lt 30 ]
+if [ $(date +%S) -lt 10 ]
 then
 	RELOAD
 else
@@ -64,8 +65,10 @@ then
 
 	echo -n "BEACONS (${red}red${reset}) = "
 	echo "$POP" | pv -qL 10
-	sleep 3
-	curl -s https://raw.githubusercontent.com/alectramell/beacons/master/red.bcn | pg
+	sleep 1.5
+	showBeacons=$(curl -s https://raw.githubusercontent.com/alectramell/beacons/master/red.bcn)
+	echo "${back}${blue}>>${red}$showBeacons${reset}"
+	sleep 7
 
 elif [ $TAG -eq 2 ]
 then
@@ -82,8 +85,10 @@ then
 
 	echo -n "BEACONS (${yellow}yellow${reset}) = "
 	echo "$POP" | pv -qL 10
-	sleep 3
-	curl -s https://raw.githubusercontent.com/alectramell/beacons/master/yellow.bcn | pg
+	sleep 1.5
+	showBeacons=$(curl -s https://raw.githubusercontent.com/alectramell/beacons/master/yellow.bcn)
+	echo "${back}${blue}>>${yellow}$showBeacons${reset}"
+	sleep 7
 
 elif [ $TAG -eq 3 ]
 then
@@ -100,8 +105,10 @@ then
 
 	echo -n "BEACONS (${green}green${reset}) = "
 	echo "$POP" | pv -qL 10
-	sleep 3
-	curl -s https://raw.githubusercontent.com/alectramell/beacons/master/green.bcn | pg
+	sleep 1.5
+	showBeacons=$(curl -s https://raw.githubusercontent.com/alectramell/beacons/master/green.bcn)
+	echo "${back}${blue}>>${green}$showBeacons${reset}"
+	sleep 7
 fi
 
 done
