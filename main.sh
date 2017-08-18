@@ -7,7 +7,15 @@ read TAG
 
 clear
 
-PXP=$(wc -w < $(curl -s https://raw.githubusercontent.com/alectramell/beacons/master/$TAG.bcn))
+rm $(pwd)/$TAG.bcn
+
+clear
+
+wget --quiet https://raw.githubusercontent.com/alectramell/beacons/master/$TAG.bcn -O $(pwd)/$TAG.bcn
+
+clear
+
+PXP=$(wc -c < $(pwd)/$TAG.bcn)
 POP=$PXP
 
 while [ $POP -gt 5 ]
