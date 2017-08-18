@@ -29,8 +29,9 @@ then
 
 	clear
 
-	echo "BEACONS (${red}red${reset}) = $POP"
-	sleep 3
+	echo -n "BEACONS (${red}red${reset}) = "
+	echo "$POP" | pv -qL 10
+	sleep 5
 
 elif [ $TAG -eq 2 ]
 then
@@ -45,8 +46,9 @@ then
 
 	clear
 
-	echo "BEACONS (${yellow}yellow${reset}) = $POP"
-	sleep 3
+	echo -n "BEACONS (${yellow}yellow${reset}) = "
+	echo "$POP" | pv -qL 10
+	sleep 5
 
 elif [ $TAG -eq 3 ]
 then
@@ -61,8 +63,9 @@ then
 
 	clear
 
-	echo "BEACONS (${green}green${reset}) = $POP"
-	sleep 3
+	echo -n "BEACONS (${green}green${reset}) = "
+	echo "$POP" | pv -qL 10
+	sleep 5
 fi
 
 done
