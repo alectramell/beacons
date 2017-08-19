@@ -16,10 +16,6 @@ RELOAD() {
 	echo "..ATTEMPTING TO RE-GATHER BEACONS.." | pv -qL 10
 	sleep 5
 	clear
-	rm /home/$(whoami)/Desktop/.red.bcns
-	rm /home/$(whoami)/Desktop/.yellow.bcns
-	rm /home/$(whoami)/Desktop/.green.bcns
-	clear
 	rm $(pwd)/red.bcn
 	rm $(pwd)/yellow.bcn
 	rm $(pwd)/green.bcn
@@ -31,7 +27,7 @@ RELOAD() {
 
 clear
 
-if [ $(date +%S) -lt 10 ]
+if [ $(date +%S) -lt 5 ]
 then
 	RELOAD
 else
@@ -53,7 +49,7 @@ clear
 while [ $(curl -s https://raw.githubusercontent.com/alectramell/beacons/master/status.txt) = "ON" ]
 do
 
-if [ $(date +%S) -lt 10 ]
+if [ $(date +%S) -lt 5 ]
 then
 	RELOAD
 else
