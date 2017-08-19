@@ -150,7 +150,12 @@ fi
 
 if [ -e /home/$(whoami)/Desktop/beacons.list ]
 then
+	echo "..LOADING BEACON LIST.." | pv -qL 10
+	sleep 3
+	clear
 	gnome-open /home/$(whoami)/Desktop/beacons.list &
+	sleep 1.5
+	clear
 	rm /home/$(whoami)/Desktop/.red.bcns
 	rm /home/$(whoami)/Desktop/.yellow.bcns
 	rm /home/$(whoami)/Desktop/.green.bcns
