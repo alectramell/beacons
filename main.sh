@@ -150,7 +150,6 @@ then
 	echo "..LOADING BEACON LIST.." | pv -qL 10
 	sleep 3
 	clear
-	gnome-open /home/$(whoami)/Desktop/beacons.list &
 	sleep 1.5
 	clear
 	rm /home/$(whoami)/Desktop/.red.bcns
@@ -162,6 +161,9 @@ then
 	rm $(pwd)/green.bcn
 	clear
 	rm $(pwd)/status.txt
+	clear
+	gnome-open /home/$(whoami)/Desktop/beacons.list &
+	clear
 	exit
 else
 	clear
