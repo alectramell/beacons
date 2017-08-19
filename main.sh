@@ -78,7 +78,7 @@ then
 	showBeacons=$(curl -s https://raw.githubusercontent.com/alectramell/beacons/master/red.bcn)
 	echo "${back}${blue}LIST >>${reset}"
 	echo "${red}$showBeacons${reset}"
-	sleep 7
+	sleep 5
 
 elif [ $TAG -eq 2 ]
 then
@@ -100,7 +100,7 @@ then
 	showBeacons=$(curl -s https://raw.githubusercontent.com/alectramell/beacons/master/yellow.bcn)
 	echo "${back}${blue}LIST >>${reset}"
 	echo "${yellow}$showBeacons${reset}"
-	sleep 7
+	sleep 5
 
 elif [ $TAG -eq 3 ]
 then
@@ -122,7 +122,7 @@ then
 	showBeacons=$(curl -s https://raw.githubusercontent.com/alectramell/beacons/master/green.bcn)
 	echo "${back}${blue}LIST >>${reset}"
 	echo "${green}$showBeacons${reset}"
-	sleep 7
+	sleep 5
 fi
 
 if [ -e /home/$(whoami)/Desktop/.red.bcns ] && [ -e /home/$(whoami)/Desktop/.yellow.bcns ] && [ -e /home/$(whoami)/Desktop/.green.bcns ]
