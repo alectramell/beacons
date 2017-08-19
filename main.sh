@@ -72,8 +72,7 @@ then
 
 	clear
 
-	echo -n "BEACONS (${red}red${reset}) = "
-	echo "$POP" | pv -qL 10
+	echo "BEACONS (${red}$POP${reset})" | pv -qL 15
 	sleep 1.5
 	showBeacons=$(curl -s https://raw.githubusercontent.com/alectramell/beacons/master/red.bcn)
 	echo "${back}${blue}LIST >>${reset}"
@@ -94,8 +93,7 @@ then
 
 	clear
 
-	echo -n "BEACONS (${yellow}yellow${reset}) = "
-	echo "$POP" | pv -qL 10
+	echo "BEACONS (${yellow}$POP${reset})" | pv -qL 15
 	sleep 1.5
 	showBeacons=$(curl -s https://raw.githubusercontent.com/alectramell/beacons/master/yellow.bcn)
 	echo "${back}${blue}LIST >>${reset}"
@@ -116,8 +114,7 @@ then
 
 	clear
 
-	echo -n "BEACONS (${green}green${reset}) = "
-	echo "$POP" | pv -qL 10
+	echo "BEACONS (${green}$POP${reset})" | pv -qL 15
 	sleep 1.5
 	showBeacons=$(curl -s https://raw.githubusercontent.com/alectramell/beacons/master/green.bcn)
 	echo "${back}${blue}LIST >>${reset}"
