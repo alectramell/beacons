@@ -26,7 +26,7 @@ do
 		SIGNAL="VERY GOOD"
 		echo -n "${paper}${blue}${bold} WiFi Signal for ${white} $SSID ${reset}"
 		echo "${paper}${green}${bold} is (( $SIGNAL )) ${reset}"
-		sleep 5.5
+		sleep 1.5
 		clear
 
 	elif [ $LOG -lt 65 ]
@@ -34,7 +34,7 @@ do
 		SIGNAL="GOOD"
 		echo -n "${paper}${blue}${bold} WiFi Signal for ${white} $SSID ${reset}"
 		echo "${paper}${green}${bold} is (( $SIGNAL )) ${reset}"
-		sleep 5.5
+		sleep 1.5
 		clear
 
 	elif [ $LOG -lt 50 ]
@@ -42,7 +42,7 @@ do
 		SIGNAL="MEDIUM"
 		echo -n "${paper}${blue}${bold} WiFi Signal for ${white} $SSID ${reset}"
 		echo "${paper}${gold}${bold} is (( $SIGNAL )) ${reset}"
-		sleep 5.5
+		sleep 1.5
 		clear
 
 	elif [ $LOG -lt 40 ]
@@ -50,7 +50,7 @@ do
 		SIGNAL="LOW"
 		echo -n "${paper}${blue}${bold} WiFi Signal for ${white} $SSID ${reset}"
 		echo "${paper}${red}${bold} is (( $SIGNAL )) ${reset}"
-		sleep 5.5
+		sleep 1.5
 		clear
 
 	elif [ $LOG -lt 20 ]
@@ -58,12 +58,12 @@ do
 		SIGNAL="BAD"
 		echo -n "${paper}${blue}${bold} WiFi Signal for ${white} $SSID ${reset}"
 		echo "${paper}${red}${bold} is (( $SIGNAL )) ${reset}"
-		sleep 5.5
+		sleep 1.5
 		clear
 	else
 		clear
 		echo "${paper}${red}${bold}..NO CONNECTION..${reset}"
-		sleep 5.0
+		sleep 2.5
 		clear
 	fi
 
