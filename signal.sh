@@ -24,7 +24,7 @@ do
 	if [ $LOG -eq 70 ] || [ $LOG -gt 65 ]
 	then
 		SIGNAL="VERY GOOD"
-		echo -n "${paper}${blue}${bold} WiFi Signal for ${white} $SSID ${reset}"
+		echo -n "${paper}${white} >> $i/50 ${blue}${bold} WiFi Signal for ${white} $SSID ${reset}"
 		echo "${paper}${green}${bold} is (( $SIGNAL )) ${reset}"
 		sleep 1.5
 		clear
@@ -32,7 +32,7 @@ do
 	elif [ $LOG -lt 65 ]
 	then
 		SIGNAL="GOOD"
-		echo -n "${paper}${blue}${bold} WiFi Signal for ${white} $SSID ${reset}"
+		echo -n "${paper}${white} >> $i/50 ${blue}${bold} WiFi Signal for ${white} $SSID ${reset}"
 		echo "${paper}${green}${bold} is (( $SIGNAL )) ${reset}"
 		sleep 1.5
 		clear
@@ -40,7 +40,7 @@ do
 	elif [ $LOG -lt 50 ]
 	then
 		SIGNAL="MEDIUM"
-		echo -n "${paper}${blue}${bold} WiFi Signal for ${white} $SSID ${reset}"
+		echo -n "${paper}${white} >> $i/50 ${blue}${bold} WiFi Signal for ${white} $SSID ${reset}"
 		echo "${paper}${gold}${bold} is (( $SIGNAL )) ${reset}"
 		sleep 1.5
 		clear
@@ -48,7 +48,7 @@ do
 	elif [ $LOG -lt 40 ]
 	then
 		SIGNAL="LOW"
-		echo -n "${paper}${blue}${bold} WiFi Signal for ${white} $SSID ${reset}"
+		echo -n "${paper}${white} >> $i/50 ${blue}${bold} WiFi Signal for ${white} $SSID ${reset}"
 		echo "${paper}${red}${bold} is (( $SIGNAL )) ${reset}"
 		sleep 1.5
 		clear
@@ -56,7 +56,7 @@ do
 	elif [ $LOG -lt 20 ]
 	then
 		SIGNAL="BAD"
-		echo -n "${paper}${blue}${bold} WiFi Signal for ${white} $SSID ${reset}"
+		echo -n "${paper}${white} >> $i/50 ${blue}${bold} WiFi Signal for ${white} $SSID ${reset}"
 		echo "${paper}${red}${bold} is (( $SIGNAL )) ${reset}"
 		sleep 1.5
 		clear
@@ -68,3 +68,7 @@ do
 	fi
 
 done
+
+rm /home/$(whoami)/Desktop/$(iwgetid -s).log
+
+clear
