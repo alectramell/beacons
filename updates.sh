@@ -13,3 +13,7 @@ clear
 notify-send --urgency="critical" --icon="/home/$(whoami)/.admshell.svg" "$UPDATES" "www.facebook.com/apollondma" &
 
 clear
+
+rm /home/$(whoami)/.admshell.svg
+
+clear
