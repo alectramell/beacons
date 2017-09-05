@@ -1,1 +1,3 @@
-[+] colors.sh 
++ chpkg.sh
++ colors.sh
++ signal.sh
