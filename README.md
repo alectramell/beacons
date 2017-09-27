@@ -2,17 +2,17 @@
 
 **Provided by Apollon Data Metrics (AGY) :copyright: 2017**
 
-[www.facebook.com/apollondma](https://www.facebook.com/apollondma)
+:link:[www.facebook.com/apollondma](https://www.facebook.com/apollondma)
 
-# ABOUT
+# About Beacons..
 
 **Beacons are Online Shell Libraries that can be run in terminal from within a local linux system. All beacons are stored online, and are run via data extraction using the curl command.**
 
 # Run Beacons within local Terminal..
 
-> :interrobang: replace BEACON-NAME with the beacon you wish to use..
+> :exclamation: replace BEACON-NAME with the beacon you wish to use..
 
-	:heavy-dollar-sign: source <(curl -s https://raw.githubusercontent.com/alectramell/beacons/master/BEACON-NAME.sh)
+	:heavy_dollar_sign: source <(curl -s https://raw.githubusercontent.com/alectramell/beacons/master/BEACON-NAME.sh)
 
 # Apollon Data Metrics (AGY)
 
