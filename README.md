@@ -2,7 +2,7 @@
 
 **Provided by Apollon Data Metrics (AGY) :copyright: 2017**
 
-![ADM](https://raw.githubusercontent.com/alectramell/beacons/master/admshell.png)
+![ADM](https://raw.githubusercontent.com/alectramell/beacons/master/icon.png)
 
 [www.facebook.com/apollondma](https://www.facebook.com/apollondma)
 
@@ -14,7 +14,7 @@
 
 > :exclamation: replace BEACON-NAME with the beacon you wish to use
 
-	**$** source <(curl -s https://raw.githubusercontent.com/alectramell/beacons/master/BEACON-NAME.sh)
+**$** source <(curl -s https://raw.githubusercontent.com/alectramell/beacons/master/BEACON-NAME.sh)
 
 # Apollon Data Metrics (AGY)
 
