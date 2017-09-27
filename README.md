@@ -2,11 +2,9 @@
 # Beacons v1.0
 # ====================
 
-	Provided by Apollon Data Metrics (AGY) | (c) 2017
+[author](#Apollon Data Metrics (AGY) | (c) 2017)
 
-# ====================
-# ABOUT BEACONS
-# ====================
+[about](#ABOUT BEACONS)
 
 	Beacons are Shell Scripts that can be run from terminal within a local linux system. All beacons are stored online, and are run via data extraction using the curl command.
 
