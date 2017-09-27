@@ -1,6 +1,6 @@
 # Beacons v1.0
 
-**Provided by Apollon Data Metrics (AGY)**
+**Provided by Apollon Data Metrics (AGY) :copyright: 2017**
 
 [www.facebook.com/apollondma](https://www.facebook.com/apollondma)
 
@@ -10,9 +10,9 @@
 
 # Run Beacons within local Terminal..
 
-> replace BEACON-NAME with the beacon you wish to use..
+> :interrobang: replace BEACON-NAME with the beacon you wish to use..
 
-	$ source <(curl -s https://raw.githubusercontent.com/alectramell/beacons/master/BEACON-NAME.sh)
+	:heavy-dollar-sign: source <(curl -s https://raw.githubusercontent.com/alectramell/beacons/master/BEACON-NAME.sh)
 
 # Apollon Data Metrics (AGY)
 
