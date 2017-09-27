@@ -2,7 +2,7 @@
 
 **Provided by Apollon Data Metrics (AGY) :copyright: 2017**
 
-:facebook:[www.facebook.com/apollondma](https://www.facebook.com/apollondma)
+[www.facebook.com/apollondma](https://www.facebook.com/apollondma)
 
 # About Beacons..
 
@@ -10,9 +10,9 @@
 
 # Run Beacons within local Terminal..
 
-> :exclamation: replace BEACON-NAME with the beacon you wish to use..
+> :exclamation: replace BEACON-NAME with the beacon you wish to use
 
-	$ source <(curl -s https://raw.githubusercontent.com/alectramell/beacons/master/BEACON-NAME.sh)
+	**$** source <(curl -s https://raw.githubusercontent.com/alectramell/beacons/master/BEACON-NAME.sh)
 
 # Apollon Data Metrics (AGY)
 
