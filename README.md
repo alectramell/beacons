@@ -2,11 +2,14 @@
 # Beacons v1.0
 # ====================
 
-[author](#Apollon Data Metrics (AGY) | (c) 2017)
+![ADM Logo](admshell.svg)
+Format: ![Alt Text](url)
 
-[about](#ABOUT BEACONS)
+**Apollon Data Metrics (AGY) | (c) 2017**
 
-	Beacons are Shell Scripts that can be run from terminal within a local linux system. All beacons are stored online, and are run via data extraction using the curl command.
+#ABOUT
+
+	**Beacons are Shell Scripts that can be run from terminal within a local linux system. All beacons are stored online, and are run via data extraction using the curl command.**
 
 # Run Beacons within local Terminal..
 
@@ -14,8 +17,8 @@
 
 # Apollon Data Metrics (AGY)
 
-	The agency writes, and provide data metrics for software development, and information extraction.
+	> The agency writes, and provide data metrics for software development, and information extraction.
 
-	https://www.facebook.com/apollondma
+	[www.facebook.com/apollondma](https://www.facebook.com/apollondma)
 
 # ====================
