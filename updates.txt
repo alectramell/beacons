@@ -1,7 +1,0 @@
-+ chpkg.sh
-+ colors.sh
-+ signal.sh
-+ list.sh
-+ library.sh, library.txt
-
-
