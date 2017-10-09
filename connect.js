@@ -1,4 +1,6 @@
 
+document.getElementById('BG').background = 'img/bg.jpg'
+
 getStatus = true;
 
 if (getStatus = true) {
