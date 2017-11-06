@@ -12,9 +12,9 @@ xxd -p $(pwd)/.xname.log > .xname.bin
 
 rm $(pwd)/.xname.log
 
-mv $(pwd)/.xname.bin $(pwd)/name.bin
+mv $(pwd)/.xname.bin $(pwd)/user.bin
 
 clear
 
-cat $(pwd)/name.bin
+cat $(pwd)/user.bin
 
