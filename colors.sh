@@ -2,6 +2,17 @@
 
 clear
 
+#
+# IMPORTING COLORS v1.0:
+# at the top of your SHELL/BASH Script, after #!/bin/bash, type..
+# source <(curl -s https://raw.githubusercontent.com/alectramell/beacons/master/colors.sh)
+#
+# USAGE (EXAMPLE):
+# echo "${green}Hello World!${reset}"
+#
+
+clear
+
 paper=$(tput smso)
 bold=$(tput bold)
 black=$(tput setaf 0)
