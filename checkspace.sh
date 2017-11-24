@@ -2,6 +2,14 @@
 
 clear
 
+#
+# USING CHECKSPACE v1.0:
+# bash <(curl -s https://raw.githubusercontent.com/alectramell/beacons/master/checkspace.sh)
+#
+
+
+clear
+
 wget -nc https://raw.githubusercontent.com/alectramell/beacons/master/voodoo.svg -O /home/$(whoami)/.voodoo.svg
 
 clear
@@ -33,7 +41,7 @@ then
 	notify-send --urgency="critical" --icon="/home/$(whoami)/.voodoo.svg" "${DLIB[4]}" "USED"
 fi
 
-sleep 3
+sleep 4.5
 
 clear
 
