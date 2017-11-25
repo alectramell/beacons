@@ -13,6 +13,6 @@ git push origin master
 
 clear
 
-echo "DONE!" | pv -qL 5
+echo "SCRIPTS UPDATED!" | pv -qL 5
 
 sleep 0.5
