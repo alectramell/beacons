@@ -1,13 +1,6 @@
-Title:
-	Hello World
-Version:
-	1.0
-Format:
-	shell/bash
-Author:
-	Apollon Data Metrics (AGY)
+Name:
+	helloworld.sh
 About:
 	Prints "Hello World" in linux Terminal.
-
-Price:
-	$0.00 (FREE)
+Author:
+	Apollon Data Metrics (AGY)
